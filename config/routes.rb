@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
-  get "dashboard/receptionist"
-  get "dashboard/doctor"
   # Custom login/logout routes
   get    "/login",  to: "sessions#new"
   post   "/login",  to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  # Dashboards
-  get "/receptionist_dashboard", to: "dashboard#receptionist"
-  get "/doctor_dashboard",       to: "dashboard#doctor"
+  # Dashboards (fixed controller name)
+  get "/receptionist/dashboard", to: "dashboards#receptionist", as: :receptionist_dashboard
+  get "/doctor/dashboard",       to: "dashboards#doctor",       as: :doctor_dashboard
 
-  # Root path goes to login page for now
+  # Root path goes to login page
   root "sessions#new"
 
   # Health check (default Rails route)
