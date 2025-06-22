@@ -1,0 +1,73 @@
+# See https://help.github.com/articles/ignoring-files for more about ignoring files.
+
+# ----------------------
+# 🔧 Editor/OS files
+# ----------------------
+.vscode/
+.DS_Store
+Thumbs.db
+
+# ----------------------
+# 💎 Ruby & Rails files
+# ----------------------
+
+# Ignore bundler config
+.bundle/
+
+# Ignore log and temp files
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore PID files, but keep the directory
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore uploaded file storage
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
+
+# Ignore compiled assets
+/public/assets
+
+# Ignore cache and debug history
+.byebug_history
+
+# Ignore SQLite and PostgreSQL dump files
+*.sqlite3
+*.pgsql
+*.log
+
+# Ignore vendor (optional 3rd-party code)
+/vendor/
+
+# ----------------------
+# 🔐 Security-related files
+# ----------------------
+
+# Rails credentials and master key
+/config/master.key
+/config/credentials.yml.enc
+
+# Environment variables
+.env*
+.env
+
+# ----------------------
+# 📦 JavaScript-related files (npm/yarn)
+node_modules/
+.yarn/
+.yarnrc.yml
+
+# ----------------------
+# ❌ DevOps or generator files (not needed in your submission)
+.kamal/
+.dockerignore
+.rubocop.yml
+.github/
+script/
