@@ -6,55 +6,57 @@
     <p class="welcome-text">Welcome Dr. <%= current_user&.email || "Guest" %>!</p>
   </div>
 
-    <!-- 🔍 Search + Filter Bar -->
+  <!-- 🔍 Search + Filter Bar -->
   <%= form_with url: doctor_dashboard_path, method: :get, local: true, class: "dashboard-filters" do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search patients...", class: "dashboard-search" %>
 
-    <div class="filter-buttons">
-      <% time_options = { "Today" => "Today", "This Week" => "This Week", "This Month" => "This Month", "All Time" => "All Time" } %>
-      <% time_options.each do |value, label| %>
-        <%= submit_tag label, name: "time_range", value: value, class: "filter-btn #{'active' if params[:time_range] == value || (params[:time_range].blank? && value == 'today')}" %>
+  <div class="filter-buttons">
+    <% time_options = { "today" => "Today", "week" => "This Week", "month" => "This Month", "all" => "All Time" } %>
+
+    <% time_options.each do |value, label| %>
+      <%= button_tag type: "submit", name: "time_range", value: value, class: "filter-btn #{'active' if (params[:time_range] == value || (params[:time_range].blank? && value == 'today'))}" do %>
+        <%= label %>
       <% end %>
-    </div>
+    <% end %>
+  </div>
   <% end %>
 
-    <!-- Summary Cards (Now 4 boxes) -->
-    <div class="summary-cards">
-      <div class="summary-card">
-        <h3>Total Patients</h3>
-        <p><%= @total_patients %></p>
-      </div>
-
-      <div class="summary-card">
-        <h3>Registered Today</h3>
-        <p><%= @patients_today %></p>
-      </div>
-
-      <div class="summary-card">
-        <h3>This Week</h3>
-        <p><%= @patients_this_week || 0 %></p>
-      </div>
-
-      <div class="summary-card">
-        <h3>Top Disease</h3>
-        <p><%= @most_common_disease || "N/A" %></p>
-      </div>
+  <!-- 🔢 Summary Cards -->
+  <div class="summary-cards">
+    <div class="summary-card">
+      <h3>Total Patients</h3>
+      <p><%= @total_patients %></p>
     </div>
 
+    <div class="summary-card">
+      <h3>Registered Today</h3>
+      <p><%= @patients_today %></p>
+    </div>
 
-  <!-- Line Chart -->
+    <div class="summary-card">
+      <h3>This Week</h3>
+      <p><%= @patients_this_week || 0 %></p>
+    </div>
+
+    <div class="summary-card">
+      <h3>Top Disease</h3>
+      <p><%= @most_common_disease || "N/A" %></p>
+    </div>
+  </div>
+
+  <!-- 📈 Line Chart -->
   <div class="dashboard-section">
     <h2>📈 Patient Registrations Over Time</h2>
     <%= line_chart @patients_per_day, height: "300px", xtitle: "Date", ytitle: "Patients Registered" %>
   </div>
 
-  <!-- Bar Chart -->
+  <!-- 📊 Bar Chart -->
   <div class="dashboard-section">
     <h2>📊 Patients by Disease</h2>
     <%= bar_chart @patients_by_disease, height: "300px", xtitle: "Disease", ytitle: "Count" %>
   </div>
 
-  <!-- Recent Registrations List -->
+  <!-- 📝 Recent Registrations -->
   <div class="dashboard-section recent-patients">
     <h2>📝 Recent Registrations</h2>
     <ul>
@@ -64,7 +66,7 @@
     </ul>
   </div>
 
-  <!-- Last 10 Patients Table -->
+  <!-- 📋 Last 10 Registered Patients -->
   <div class="dashboard-section">
     <h2>📋 Last 10 Registered Patients</h2>
     <table class="styled-table">
