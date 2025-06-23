@@ -6,17 +6,17 @@
     <p class="welcome-text">Welcome Dr. <%= current_user&.email || "Guest" %>!</p>
   </div>
 
-  <!-- 🔍 Search + Filter Bar -->
-  <div class="dashboard-filters">
-    <input type="text" placeholder="Search patients..." class="dashboard-search">
+    <!-- 🔍 Search + Filter Bar -->
+  <%= form_with url: doctor_dashboard_path, method: :get, local: true, class: "dashboard-filters" do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search patients...", class: "dashboard-search" %>
 
     <div class="filter-buttons">
-      <button class="filter-btn active">Today</button>
-      <button class="filter-btn">This Week</button>
-      <button class="filter-btn">This Month</button>
-      <button class="filter-btn">All Time</button>
+      <% time_options = { "Today" => "Today", "This Week" => "This Week", "This Month" => "This Month", "All Time" => "All Time" } %>
+      <% time_options.each do |value, label| %>
+        <%= submit_tag label, name: "time_range", value: value, class: "filter-btn #{'active' if params[:time_range] == value || (params[:time_range].blank? && value == 'today')}" %>
+      <% end %>
     </div>
-  </div>
+  <% end %>
 
     <!-- Summary Cards (Now 4 boxes) -->
     <div class="summary-cards">
