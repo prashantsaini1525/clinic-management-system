@@ -323,6 +323,7 @@ td {
 }
 
 /* ----- Patient Show Page ----- */
+
 .patient-show-container {
     display: flex;
     justify-content: center;
@@ -392,9 +393,8 @@ td {
     background-color: #636e72;
 }
 
-/* ---------------------------------------------
-   Doctor Dashboard Styling
---------------------------------------------- */
+/* ----- Doctor Dashboard Styling Page ----- */
+
 .doctor-dashboard-container {
     padding: 40px 20px;
     max-width: 1200px;
@@ -417,7 +417,7 @@ td {
     margin-top: 10px;
 }
 
-/* 🔹 Summary Cards */
+/* Summary Cards */
 .summary-cards {
     display: flex;
     gap: 20px;
@@ -448,7 +448,7 @@ td {
     color: #2c3e50;
 }
 
-/* 🔹 Dashboard Sections (Charts, Lists, Tables) */
+/* Dashboard Sections (Charts, Lists, Tables) */
 .dashboard-section {
     margin-top: 40px;
     background-color: #fff;
@@ -462,7 +462,7 @@ td {
     color: #34495e;
 }
 
-/* 🔹 Recent Registrations */
+/* Recent Registrations */
 .recent-patients ul {
     list-style-type: none;
     padding-left: 0;
@@ -474,7 +474,7 @@ td {
     color: #333;
 }
 
-/* 🔹 Styled Table for Last 10 Patients */
+/* Styled Table for Last 10 Patients */
 .styled-table {
     width: 100%;
     border-collapse: collapse;
@@ -496,9 +496,8 @@ td {
     background-color: #f9f9f9;
 }
 
-/* --------------------------------------------------
-   🔍 Doctor Dashboard Filters & Search Bar
--------------------------------------------------- */
+/* Doctor Dashboard Filters & Search Bar */
+
 .dashboard-filters {
     display: flex;
     flex-wrap: wrap;
@@ -541,4 +540,214 @@ td {
 .filter-btn.active {
     background-color: #3498db;
     color: white;
+}
+
+/* 🔁 Responsive Design (Mobile First) */
+
+@media (max-width: 768px) {
+
+    /* General Adjustments */
+    body {
+        padding: 10px;
+    }
+
+    h1,
+    h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .btn,
+    .btn-login,
+    .btn-dashboard,
+    .btn-secondary,
+    .btn-table,
+    .btn-edit,
+    .btn-delete,
+    .btn-back {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Dashboard Containers */
+    .doctor-dashboard-container,
+    .dashboard-page {
+        padding: 20px 10px;
+    }
+
+    .dashboard-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-buttons {
+        justify-content: center;
+    }
+
+    .dashboard-search {
+        width: 100%;
+    }
+
+    .summary-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .summary-card {
+        width: 100%;
+    }
+
+    .dashboard-section {
+        padding: 15px;
+    }
+
+    /* Table Adjustments */
+    .patient-table,
+    .styled-table {
+        font-size: 14px;
+    }
+
+    .patient-table thead {
+        display: none;
+    }
+
+    .patient-table tr,
+    .styled-table tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        background: white;
+    }
+
+    .patient-table td,
+    .styled-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 10px;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Patient Show Page */
+    .patient-show-container {
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .patient-card {
+        padding: 20px;
+    }
+
+    .info-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    /* Form Layout */
+    .form-box {
+        padding: 20px;
+        margin: 15px auto;
+    }
+
+    .form-box input,
+    .form-box select,
+    .form-box textarea {
+        font-size: 14px;
+    }
+
+    .error-box {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Design for Login Page */
+
+@media (max-width: 768px) {
+    .login-page {
+        min-height: 100dvh;
+        width: 100dvw;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        overflow: hidden;
+    }
+
+    .login-box {
+        width: 90%;
+        max-width: 360px;
+        box-sizing: border-box;
+    }
+
+    /* Patient Show Page Responsive Styling */
+    @media (max-width: 768px) {
+        .patient-card h2 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            word-break: break-word;
+        }
+
+        .patient-info {
+            font-size: 0.95rem;
+        }
+
+        .patient-info .info-row {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+
+        .patient-actions {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .patient-actions .btn {
+            width: 100%;
+            font-size: 14px;
+            padding: 10px 14px;
+            text-align: center;
+        }
+    }
+
+    /* Doctor Dashboard - Equal button width in filters */
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .filter-buttons .filter-btn {
+        flex: 1 1 45%;
+        min-width: 45%;
+        text-align: center;
+    }
+
+    /* Doctor Dashboard - Responsive patient table */
+    .styled-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .dashboard-section h2 {
+        font-size: 1.2rem;
+    }
 }

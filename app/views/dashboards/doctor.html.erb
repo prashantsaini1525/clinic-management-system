@@ -2,7 +2,7 @@
 
   <!-- Dashboard Header -->
   <div class="dashboard-header">
-    <h1>👨‍⚕️ Doctor Dashboard</h1>
+    <h1>Doctor Dashboard</h1>
     <p class="welcome-text">Welcome Dr. <%= current_user&.email || "Guest" %>!</p>
   </div>
 
@@ -46,13 +46,13 @@
 
   <!-- 📈 Line Chart -->
   <div class="dashboard-section">
-    <h2>📈 Patient Registrations Over Time</h2>
+    <h2>Patient Registrations Over Time</h2>
     <%= line_chart @patients_per_day, height: "300px", xtitle: "Date", ytitle: "Patients Registered" %>
   </div>
 
   <!-- 📊 Bar Chart -->
   <div class="dashboard-section">
-    <h2>📊 Patients by Disease</h2>
+    <h2>Patients by Disease</h2>
     <%= bar_chart @patients_by_disease, height: "300px", xtitle: "Disease", ytitle: "Count" %>
   </div>
 
