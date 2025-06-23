@@ -1,32 +1,40 @@
-<h1>Registered Patients</h1>
+<div class="patient-index-page">
+  <h1>Registered Patients</h1>
 
-<p><%= link_to "Register New Patient", new_patient_path, class: "btn btn-primary" %></p>
+  <div class="patient-actions">
+    <%= link_to "Register New Patient", new_patient_path, class: "btn-dashboard" %>
+  </div>
 
-<table border="1" cellpadding="8" cellspacing="0">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Disease</th>
-      <th>Address</th>
-      <th>Registered On</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @patients.each do |patient| %>
+  <table class="patient-table">
+    <thead>
       <tr>
-        <td><%= patient.name %></td>
-        <td><%= patient.age %></td>
-        <td><%= patient.disease %></td>
-        <td><%= patient.address %></td>
-        <td><%= patient.registered_on.strftime("%d %B %Y") %></td>
-        <td>
-        <%= link_to "Show", patient_path(patient) %> |
-        <%= link_to "Edit", edit_patient_path(patient) %> |
-        <%= button_to "Delete", patient_path(patient), method: :delete, data: { turbo_confirm: "Are you sure?" }, form: { style: "display:inline" } %>
-        </td>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Disease</th>
+        <th>Address</th>
+        <th>Registered On</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><%= patient.name %></td>
+          <td><%= patient.age %></td>
+          <td><%= patient.disease %></td>
+          <td><%= patient.address %></td>
+          <td><%= patient.registered_on.strftime("%d %B %Y") %></td>
+          <td class="actions">
+            <%= link_to "Show", patient_path(patient), class: "btn-table show" %>
+            <%= link_to "Edit", edit_patient_path(patient), class: "btn-table edit" %>
+            <%= button_to "Delete", patient_path(patient),
+              method: :delete,
+              data: { turbo_confirm: "Are you sure?" },
+              form: { style: "display:inline" },
+              class: "btn-table delete" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

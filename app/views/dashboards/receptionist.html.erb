@@ -1,2 +1,10 @@
-<h1>Receptionist Dashboard</h1>
-<p>Welcome, <%= current_user&.email || "Guest" %>!</p>
+<div class="dashboard-page receptionist-dashboard">
+    <div class="dashboard-card">
+    <h1>Receptionist Dashboard</h1>
+    <p>Welcome, <strong><%= current_user&.email || "Guest" %></strong>!</p>
+    <div class="dashboard-actions">
+        <%= link_to "View All Patients", patients_path, class: "btn-dashboard" %>
+        <%= link_to "Register New Patient", new_patient_path, class: "btn-dashboard" %>
+    </div>
+    </div>
+</div>

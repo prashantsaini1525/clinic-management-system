@@ -1,0 +1,544 @@
+/* ---- Global Reset ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f6f8fa;
+    font-family: "Segoe UI", sans-serif;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* ----- Login Page Styling ----- */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+.login-box {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    background: #00c6ff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-login:hover {
+    background: #007acc;
+}
+
+.flash-error {
+    background: #ffe5e5;
+    padding: 10px;
+    color: #cc0000;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* ----- Receptionist Dashboard ----- */
+.dashboard-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: #f7f9fc;
+    padding: 20px;
+}
+
+.dashboard-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.dashboard-card h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.dashboard-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-dashboard {
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-dashboard:hover {
+    background-color: #2980b9;
+}
+
+/* ----- Patient Index Page ----- */
+.patient-index-page {
+    padding: 40px;
+}
+
+.patient-index-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.patient-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.patient-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.patient-table th,
+.patient-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.patient-table th {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.patient-table tr:hover {
+    background-color: #fafafa;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-table {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-table.show {
+    background-color: #27ae60;
+    color: white;
+}
+
+.btn-table.edit {
+    background-color: #f39c12;
+    color: white;
+}
+
+.btn-table.delete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* ----- New Patient Form Page ----- */
+.form-heading {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.form-box {
+    max-width: 520px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-box label {
+    font-weight: 600;
+    color: #333;
+}
+
+.form-box input[type="text"],
+.form-box input[type="number"],
+.form-box input[type="date"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.form-box input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.form-box input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* ----- Form Error Box ----- */
+.error-box {
+    background-color: #ffe6e6;
+    border: 1px solid #ff4d4d;
+    color: #b30000;
+    padding: 18px 22px;
+    margin: 10px auto 20px auto;
+    max-width: 520px;
+    border-radius: 10px;
+    box-shadow: 0 1px 8px rgba(255, 0, 0, 0.1);
+    font-size: 15px;
+}
+
+.error-box ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* ----- Generic Back Button ----- */
+.btn-secondary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 18px;
+    background-color: #7f8c8d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #636e72;
+}
+
+/* ----- Patient Show Page ----- */
+.patient-show-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 0 15px;
+}
+
+.patient-card {
+    background-color: #ffffff;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+}
+
+.patient-card h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.patient-info {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.patient-info .info-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ececec;
+    padding: 10px 0;
+}
+
+.patient-actions {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn-edit {
+    background-color: #3498db;
+}
+
+.btn-edit:hover {
+    background-color: #2980b9;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+.btn-back {
+    background-color: #7f8c8d;
+}
+
+.btn-back:hover {
+    background-color: #636e72;
+}
+
+/* ---------------------------------------------
+   Doctor Dashboard Styling
+--------------------------------------------- */
+.doctor-dashboard-container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    font-size: 2.4rem;
+    color: #2c3e50;
+}
+
+.welcome-text {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* 🔹 Summary Cards */
+.summary-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.summary-card {
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 30px;
+    width: 260px;
+    text-align: center;
+}
+
+.summary-card h3 {
+    color: #2980b9;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.summary-card p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* 🔹 Dashboard Sections (Charts, Lists, Tables) */
+.dashboard-section {
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-section h2 {
+    margin-bottom: 20px;
+    color: #34495e;
+}
+
+/* 🔹 Recent Registrations */
+.recent-patients ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.recent-patients li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+/* 🔹 Styled Table for Last 10 Patients */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.styled-table thead {
+    background-color: #3498db;
+    color: white;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* --------------------------------------------------
+   🔍 Doctor Dashboard Filters & Search Bar
+-------------------------------------------------- */
+.dashboard-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.dashboard-search {
+    flex: 1;
+    max-width: 300px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 16px;
+    background-color: #ecf0f1;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #d0d7de;
+}
+
+.filter-btn.active {
+    background-color: #3498db;
+    color: white;
+}
